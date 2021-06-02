@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}MCD | Home{% endblock title %}
+
+{% block linking %}
+<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css\home.css' %}">
+{% endblock linking %}
+
+
+{% block page_content %}
+<div class="bill_container">
+    <h1 class="empty">{{ msg }}</h1>
+    {% for item in obj %}
+    <div class="item">
+        <div class="cont1">
+            <img class="thumbnail" src={{ item.image }} alt="{{ item.title }} thumbnail">
+            <div class="veg">
+                {% if item.veg %}
+                <span class="veg-indian-vegetarian"></span>
+                {% else %}
+                <img src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png" style="width: 22px;">
+                {% endif %}
+            </div>
+        </div>
+        <div class="cont2">
+            <form method="POST">
+                {% csrf_token %}
+            
+                <h2>{{ item.title }}</h2>
+    
+                <input type="text" name="title" value="{{ item.title }}" style="display: none;">
+                <input type="text" name="price" value="{{ item.price }}" style="display: none;">
+                <input type="text" name="prod_id" value="{{ item.id }}" style="display: none;">
+    
+                <p>{{ item.desc }}</p>
+                <h3><span> &#8377; </span> {{ item.price }}</h3>
+                <button class="AddToCart" type="submit">
+                    ADD
+                </button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock page_content %}

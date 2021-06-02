@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}MCD | Register{% endblock title %}
+
+{% block linking %}
+<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css\register.css' %}">
+{% endblock linking %}
+
+{% block page_content %}
+<div>
+    <h2>Registration </h2>
+    <form method="POST">{% csrf_token %}
+
+        {{ registration_form.as_p }}
+        <center>
+            <button type="submit">Register</button>
+        </center>
+
+    </form>
+</div>
+{% endblock page_content %}

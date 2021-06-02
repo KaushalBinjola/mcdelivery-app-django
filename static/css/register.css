@@ -1,0 +1,116 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+  width: 30vw;
+  margin-top: 50px;
+  justify-content: center;
+  margin-left: 550px;
+}
+
+button {
+  border: none;
+  width: 100px;
+  height: 30px;
+  font-size: 17px;
+  border: 1px solid black;
+  border-radius: 25px;
+  background-color: none;
+  text-align: center;
+  margin-top: 20px;
+  transition: 0.5s;
+  outline: none;
+  margin-left: -80px;
+}
+
+button:hover {
+  width: 150px;
+  border: 2px solid #ffcd00;
+}
+
+ul {
+  list-style: none;
+}
+
+form li {
+  color: red;
+  font-size: 12px;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: lighter;
+  margin-left: 100px;
+}
+
+#id_username {
+  width: 100px;
+  transition: 0.5s;
+  outline: none;
+  border-radius: 10px;
+  text-indent: 10px;
+  margin-left: 85px;
+}
+
+#id_username:focus {
+  width: 175px;
+  border: 2px solid red;
+}
+
+#id_address {
+  width: 200px;
+  transition: 0.5s;
+  outline: none;
+  border-radius: 10px;
+  text-indent: 10px;
+  margin-left: 100px;
+}
+
+#id_address:focus {
+  width: 225px;
+  border: 2px solid red;
+}
+
+#id_email,
+#id_password1,
+#id_password2 {
+  width: 100px;
+  transition: 0.5s;
+  outline: none;
+  border-radius: 10px;
+  text-indent: 10px;
+}
+
+#id_email {
+  margin-left: 120px;
+}
+
+#id_password1 {
+  margin-left: 90px;
+}
+
+#id_email:focus,
+#id_password1:focus,
+#id_password2:focus {
+  width: 175px;
+  border: 2px solid red;
+}
+
+.helptext {
+  color: red;
+  margin-top: 50px;
+  font-size: 12px;
+  margin-left: 200px;
+}
+
+.helptext::before {
+  content: "\a";
+  white-space: pre;
+}
+
+#id_address::before {
+  content: "\a";
+  white-space: pre;
+}

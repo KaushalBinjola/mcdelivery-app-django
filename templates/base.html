@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Enter title in the main subpage{% endblock title %}</title>
+    {% block linking %}
+    {% endblock linking %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" >
+</head>
+
+<body>
+    {% include "Navbar.html" %}
+
+    {% block page_content %}
+    {% endblock page_content %}
+    
+    {% include "Footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<nav class="top_navbar">
+  <ul>
+    <li style="margin-left: 10px;"><a href={% url 'home' %}> <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+          alt="mcd" id="mcdlogo">
+      </a></li>
+
+    {% if user.is_authenticated %}
+    <li class="right"><a href={% url "logout" %}>Logout</a></li>
+    <li class="right"><a href={% url 'profile' %}>{{ request.user.username }}</a></li>
+    {% else %}
+    <li class="right"><a href={% url 'login' %}>Login / Register</a></li>
+    {% endif %}
+
+    <li class="right"><a href={% url 'cart' %}><i class="fa fa-shopping-cart"></i></a></li>
+  </ul>
+</nav>

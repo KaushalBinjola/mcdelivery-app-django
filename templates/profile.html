@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}MCD | Profile{% endblock title %}
+
+{% block linking %}
+<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css\profile.css' %}">
+{% endblock linking %}
+
+{% block page_content %}
+<div id="grids">
+    <div id="image"> <img
+            src="https://i.pinimg.com/originals/e1/da/32/e1da32bf0d2958b19ba5a1d3a100d7fb.jpg"
+            alt="user image" id="user-image">
+    </div>
+
+    <div id="username">
+        Hello, {{ request.user.username }}
+    </div>
+
+    <div id="email">
+        <b>Your email :</b> {{ request.user.email }}
+    </div>
+
+    <div id="address">
+        <b>Your address :</b> {{ request.user.address }}
+    </div>
+
+</div>
+{% endblock page_content %}
